@@ -197,7 +197,7 @@ h2 {
   height: 150px;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.514)),
-    url(/imagens/coffee_bg.png);
+    url(https://raw.githubusercontent.com/soufunck/portfolio/refs/heads/main/imagens/coffee_bg.png);
   background-size: 100%;
   object-fit: cover;
 
