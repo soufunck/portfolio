@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HighCode | Portfolio</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/308983cad2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="section" id="home">
+      <div class="profile_card_container">
+        <aside class="profile_card">
+          <header class="card_header"></header>
+
+          <div class="card_body">
+            <div class="profile_image">
+              <img
+                src="/imagens/profile.jpg"
+                alt="Foto de Perfil de João Pedro"
+                style="border-radius: 50%"
+              />
+            </div>
+
+            <h2 class="profile_name">João Pedro</h2>
+            <p class="profile_role">Desenvolvedor Front-End</p>
+
+            <div class="hero_meta">
+              <div class="meta_item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Rio Grande do Sul, Brasil</span>
+              </div>
+
+              <div class="meta_item">
+                <i class="fa-regular fa-calendar"></i>
+                <span>26/07/2006</span>
+              </div>
+
+              <div class="meta_item">
+                <i class="status_dot"></i>
+                <span>Disponível para novos projetos</span>
+              </div>
+            </div>
+
+            <div class="social_links">
+              <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="#" title="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero_info">
+        <h1>
+          Olá! <span class="wave">👋</span> <br />
+          Bem-vindo(a)
+        </h1>
+        <div class="navbar">
+          <p class="nav_title">
+            Escolha uma seção ou arraste a tela para navegar.
+          </p>
+          <ul>
+            <a href="#projetos">
+              <li class="btn" title="Alguns dos projetos em que trabalhei">
+                <i class="fa-solid fa-rocket"></i> Projetos
+              </li>
+            </a>
+
+            <a href="#sobre">
+              <li class="btn" title="Me conheça um pouco mais">
+                <i class="fa-regular fa-user"></i> Sobre mim
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="projetos">
+      <div class="flex_title" data-aos="fade-down">
+        <p><i class="fa-solid fa-rocket" id="icon"></i> Projetos</p>
+        <a class="back" href="#" title="Volte para a sessão anterior">
+          <i class="fa-solid fa-arrow-up" id="icon"></i>
+        </a>
+      </div>
+
+      <div class="projects_container">
+        <div class="projects_card">
+          <div
+            class="card_bg"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.336)),
+                url(/imagens/gimenis-adv.png);
+            "
+          >
+            <div class="opacity_itens">
+              <p class="description">
+                Gimenis Adv
+                <a
+                  href="https://www.gimenis.adv.br/"
+                  class="btn"
+                  target="_blank"
+                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects_card">
+          <div
+            class="card_bg"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.336)),
+                url(/imagens/highcode.png);
+            "
+          >
+            <div class="opacity_itens">
+              <p class="description">
+                HighCode
+                <a
+                  href="https://soufunck.github.io/highcode/"
+                  class="btn"
+                  target="_blank"
+                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects_card">
+          <div
+            class="card_bg"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.336)),
+                url(/imagens/blackout-landing-page.png);
+            "
+          >
+            <div class="opacity_itens">
+              <p class="description">
+                Blackout LP
+                <a
+                  href="https://soufunck.github.io/blackout-landing-page/"
+                  class="btn"
+                  target="_blank"
+                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects_card">
+          <div
+            class="card_bg"
+            style="
+              background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.336)),
+                url(/imagens/devlinks.png);
+              background-position: center;
+            "
+          >
+            <div class="opacity_itens">
+              <p class="description">
+                DevLink
+                <a
+                  href="https://soufunck.github.io/devlinks/"
+                  class="btn"
+                  target="_blank"
+                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="skills">
+      <div class="skills_list_container">
+        <h2>Tecnologias</h2>
+
+        <div class="skills_slide_container">
+          <div class="skills_slide">
+            <ul>
+              <li title="HTML5">
+                <i class="fa-brands fa-html5" id="icon"></i> HTML5
+              </li>
+              <li title="CSS3">
+                <i class="fa-brands fa-css3-alt" id="icon"></i> CSS3
+              </li>
+              <li title="SASS">
+                <i class="fa-brands fa-sass" id="icon"></i> SASS
+              </li>
+              <li title="JavaScript">
+                <i class="fa-brands fa-js" id="icon"></i> JavaScript
+              </li>
+              <li title="ReactJs">
+                <i class="fa-brands fa-react" id="icon"></i> ReactJs
+              </li>
+              <li title="NodeJs">
+                <i class="fa-brands fa-node-js" id="icon"></i> NodeJs
+              </li>
+              <li title="MongoDb">
+                <i class="fa-brands fa-mdb" id="icon"></i> MongoDb
+              </li>
+              <li title="Firebase">
+                <i class="fa-solid fa-fire-flame-curved" id="icon"></i> Firebase
+              </li>
+            </ul>
+            <ul>
+              <li><i class="fa-brands fa-figma" id="icon"></i> Figma</li>
+              <li><i class="fa-brands fa-css3-alt" id="icon"></i> CSS3</li>
+              <li><i class="fa-brands fa-sass" id="icon"></i> SASS</li>
+              <li><i class="fa-brands fa-js" id="icon"></i> JavaScript</li>
+              <li><i class="fa-brands fa-react" id="icon"></i> ReactJs</li>
+              <li><i class="fa-brands fa-node-js" id="icon"></i> NodeJs</li>
+              <li><i class="fa-brands fa-mdb" id="icon"></i> MongoDb</li>
+              <li>
+                <i class="fa-solid fa-fire-flame-curved" id="icon"></i> Firebase
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="sobre">
+      <div class="container">
+        <div class="flex_title" style="margin: 0" data-aos="fade-down">
+          <p><i class="fa-regular fa-user" id="icon"></i> Sobre mim</p>
+          <a class="back" href="#projetos" title="Volte para a sessão anterior">
+            <i class="fa-solid fa-arrow-up" id="icon"></i>
+          </a>
+        </div>
+
+        <div class="about_grid">
+          <p class="description">
+            Bora saber um pouco mais sobre mim.<br />Tire algumas das dúvidas
+            comuns sobre qualquer pessoa.
+          </p>
+
+          <div class="faq_container">
+            <aside class="faq_sidebar">
+              <h2>Navegue</h2>
+            </aside>
+
+            <div class="faq_content">
+              <details>
+                <summary>
+                  Quem é o João Pedro?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Sou um entusiasta da tecnologia. Gosto de uma boa música,
+                    acompanhada de um café (sem açúcar e bem quente) para ficar
+                    perfeito. Meu foco é o front-end, onde busco unir o design
+                    minimalista com o profissional. É um prazer superar às
+                    expectativas. Acredito que a simplicidade somada com
+                    qualidade é o último grau da sofisticação.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>
+                  Está na área há quanto tempo?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Comecei minha jornada de estudos em 2020. Meu primeiro
+                    contato com a programação foi no Discord, programando bots
+                    com a livraria
+                    <b>discord.js</b>. Cheguei a criar uma comunidade, ajudando
+                    outros programadores a desenvolver projetos úteis e,
+                    principalmente, se divertir. Afinal, a programação é sim uma
+                    diversão.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>
+                  Como funciona meu processo de trabalho?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Acredito na <b>colaboração constante</b>. Começo entendendo
+                    o que o cliente deseja, para assim idealizarmos um projeto
+                    bacana, que faça sentido para ambos, até chegar a entrega de
+                    um código limpo, escalável e bem documentado.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>
+                  Você trabalha bem em equipe?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Sim, acho até que flui melhor. Como comentei na faq acima,
+                    eu acredito na colaboração constante. Trocar ideias,
+                    experiências e leveza, faz o projeto ser bem mais
+                    estruturado e aumenta a velocidade da produção do mesmo.
+                    Mas, não podemos deixar de trabalhar o indivual. O
+                    equilíbrio é a "fórmula mágica".
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>
+                  Por que ser programador?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Desde pequeno eu lido com a tecnologia por ter uma família
+                    que trabalha em áreas ligadas à tecnologia. Alguns são
+                    técnicos de informática, eletricistas, engenheiros... Bem,
+                    são muitas áreas. Mas, não só por este motivo. Eu gosto de
+                    criar, projetar, pensar e ver um bom resultado de algo que
+                    eu trabalhei, e a programação me traz tudo isso em linhas e
+                    lógicas de código.
+                  </p>
+                </div>
+              </details>
+
+              <details>
+                <summary>
+                  Quanto tempo leva para entregar um site?
+                  <span class="faq_icon">+</span>
+                </summary>
+                <div class="faq_description">
+                  <p>
+                    Cada caso é um caso, mas, em geral, são <b>7 dias</b> para
+                    conseguir desenvolver um bom projeto, com códigos limpos e
+                    que fazem sentido para o cliente. Ah, também busco criar, no
+                    mínimo, <b>3 esboços para o projeto final</b>. Acredito que
+                    assim, tanto eu quanto o cliente, teremos tempo para
+                    analisar a melhor opção.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="feedback">
+      <div class="flex_title" style="margin: 0" data-aos="fade-down">
+        <p><i class="fa-regular fa-star" id="icon"></i> Depoimentos</p>
+        <a class="back" href="#" title="Volte para a sessão anterior">
+          <i class="fa-solid fa-arrow-up" id="icon"></i>
+        </a>
+      </div>
+
+      <p class="description">
+        Alguns dos depoimentos de quem já trabalhou comigo.<br />
+        Clique no comentário para ir até a fonte.
+      </p>
+
+      <div class="feedback_wrapper">
+        <a
+          class="feedback_card_unique"
+          href="https://www.99freelas.com.br/project/criacao-de-apenas-uma-pagina-em-html-css-e-javascript-do-zero-290738"
+          target="_blank"
+        >
+          <div class="user_info">
+            <div class="user_img">
+              <img
+                src="/imagens/gimenis.webp"
+                alt="Perfil de Gladstone, do 99 Freelas"
+                style="border-radius: 50%"
+              />
+            </div>
+            <div class="user_name_role">
+              <strong>Gladstone</strong>
+              <span>CEO — Gimenis Adv</span>
+            </div>
+          </div>
+
+          <p class="feedback_quote">
+            "Já trabalhei com o João anteriormente, excelente profissional!
+            Caprichoso, dedicado e muito profissional."
+          </p>
+
+          <div class="feedback_stars_container">
+            <div class="stars_placeholder">★★★★★</div>
+            <div class="stars_fill">★★★★★</div>
+          </div>
+        </a>
+
+        <a
+          class="feedback_card_unique"
+          href="https://www.99freelas.com.br/project/site-para-studio-de-treinamento-fisico-318217"
+          target="_blank"
+        >
+          <div class="user_info">
+            <div class="user_img">
+              <img
+                src="/imagens/no_photo.jpg"
+                alt="Perfil de Eduardo Santos, do 99 Freelas"
+                style="border-radius: 50%"
+              />
+            </div>
+            <div class="user_name_role">
+              <strong>Eduardo</strong>
+              <span>CEO — Santé</span>
+            </div>
+          </div>
+
+          <p class="feedback_quote">
+            "Atendimento ótimo e o trabalho muito bom"
+          </p>
+
+          <div class="feedback_stars_container">
+            <div class="stars_placeholder">★★★★★</div>
+            <div class="stars_fill">★★★★★</div>
+          </div>
+        </a>
+
+        <a
+          class="feedback_card_unique"
+          href="https://www.99freelas.com.br/project/website-equipamentos-para-bitcoin-294112"
+          target="_blank"
+        >
+          <div class="user_info">
+            <div class="user_img">
+              <img
+                src="/imagens/diogo-gil.jpg"
+                alt="Perfil de Diogo, do 99 Freelas"
+                style="border-radius: 50%"
+              />
+            </div>
+            <div class="user_name_role">
+              <strong>Diogo</strong>
+              <span>Projeto Bitcoin</span>
+            </div>
+          </div>
+
+          <p class="feedback_quote">
+            "por motivos pessoais acabou por abandonar o projecto, mas o que foi
+            sendo cloncluido esta ok"
+          </p>
+
+          <div class="feedback_stars_container">
+            <div class="stars_placeholder">★★★★★</div>
+            <div class="stars_fill other">★★★★★</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer_container">
+        <div class="footer_text">
+          <h1>Fim da linha!</h1>
+          <p>
+            Obrigado pela sua visita!<br/>Volte sempre que quiser.
+          </p>
+
+          <div class="social_links">
+            <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" title="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <a class="back" href="#" title="Volte para o começo!">
+          <i class="fa-solid fa-arrow-up" id="icon"></i>
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>
