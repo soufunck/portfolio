@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio - João Pedro."
+    />
+
     <title>Funck | Portfolio</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="icon" type="image/x-icon" href="https://github.com/soufunck/portfolio/blob/main/imagens/profile.jpg?raw=trueg">
-    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,10 +25,29 @@
     ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://github.com/soufunck/portfolio/blob/main/imagens/profile.jpg?raw=trueg"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <button
+      id="theme-toggle"
+      class="theme-btn tooltip-left"
+      data-tooltip="Troque o tema"
+    >
+      <div
+        id="theme-container"
+        style="display: flex; align-items: center; gap: 10px"
+      >
+        <i class="fa-solid fa-sun"></i>
+      </div>
+    </button>
+
     <div class="section" id="home">
       <div class="profile_card_container">
         <aside class="profile_card">
@@ -62,8 +83,18 @@
             </div>
 
             <div class="social_links">
-              <a href="https://github.com/soufunck" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.instagram.com/jpfunck/" target="_blank" title="Instagram"
+              <a
+                href="https://github.com/soufunck"
+                target="_blank"
+                title="GitHub"
+                data-tooltip="Visite meu GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/jpfunck/"
+                target="_blank"
+                title="Instagram"
+                data-tooltip="Visite meu Instagram"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
             </div>
@@ -76,20 +107,50 @@
           Olá! <span class="wave">👋</span> <br />
           Bem-vindo(a)
         </h1>
+        <div class="navbar">
+          <p class="nav_title">
+            Escolha uma seção ou arraste a tela para navegar.
+          </p>
+          <ul>
+            <a href="#projetos">
+              <li
+                class="btn"
+                data-tooltip="Alguns dos projetos em que trabalhei"
+              >
+                <i class="fa-solid fa-rocket"></i> Projetos
+              </li>
+            </a>
+
+            <a href="#sobre">
+              <li class="btn" data-tooltip="Me conheça um pouco mais">
+                <i class="fa-regular fa-user"></i> Sobre mim
+              </li>
+            </a>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="section" id="projetos">
       <div class="flex_title" data-aos="fade-down">
         <p><i class="fa-solid fa-rocket" id="icon"></i> Projetos</p>
-        <a class="back" href="#" title="Volte para a sessão anterior">
-          <i class="fa-solid fa-arrow-up" id="icon"></i>
-        </a>
       </div>
-      
-      <p class="description other">
-        Clique na <b>imagem</b> para rolar a página.<br />Clique no <b>botão</b> para ir até a página.
-      </p>
+
+      <div class="description" style="margin: -50px 0 50px 0">
+        Alguns projetos que participei/criei.<br /><br />
+
+        <div class="italic_container" style="margin-top: -20px">
+          <span class="italic_text desktop">
+            <i class="fa-solid fa-circle-info" id="icon"></i>
+            Passe o mouse na <b>imagem</b> para rolar a imagem.</span
+          >
+          <span class="italic_text mobile">
+            <i class="fa-solid fa-circle-info" id="icon"></i>
+            Pressione o <b>botão</b> do card para rolar a imagem.</span
+          >
+        </div>
+      </div>
+
       <div class="projects_container">
         <div class="projects_card">
           <div
@@ -105,11 +166,13 @@
                 Gimenis Adv
                 <a
                   href="https://www.gimenis.adv.br/"
-                  class="btn"
+                  class="btn tooltip-bottom"
                   target="_blank"
-                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                  data-tooltip="Vá para o site"
+                  >Live <i class="fa-solid fa-link" id="icon"></i
                 ></a>
               </p>
+              <button class="scroll">Rolar imagem</button>
             </div>
           </div>
         </div>
@@ -128,11 +191,13 @@
                 HighCode
                 <a
                   href="https://soufunck.github.io/highcode/"
-                  class="btn"
+                  class="btn tooltip-bottom"
                   target="_blank"
-                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                  data-tooltip="Vá para o site"
+                  >Live <i class="fa-solid fa-link" id="icon"></i
                 ></a>
               </p>
+              <button class="scroll">Rolar imagem</button>
             </div>
           </div>
         </div>
@@ -151,11 +216,13 @@
                 Blackout LP
                 <a
                   href="https://soufunck.github.io/blackout-landing-page/"
-                  class="btn"
+                  class="btn tooltip-bottom"
                   target="_blank"
-                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                  data-tooltip="Vá para o site"
+                  >Live <i class="fa-solid fa-link" id="icon"></i
                 ></a>
               </p>
+              <button class="scroll">Rolar imagem</button>
             </div>
           </div>
         </div>
@@ -175,9 +242,10 @@
                 DevLink
                 <a
                   href="https://soufunck.github.io/devlinks/"
-                  class="btn"
+                  class="btn tooltip-bottom"
                   target="_blank"
-                  >Ver projeto <i class="fa-solid fa-link" id="icon"></i
+                  data-tooltip="Vá para o site"
+                  >Live <i class="fa-solid fa-link" id="icon"></i
                 ></a>
               </p>
             </div>
@@ -219,14 +287,28 @@
               </li>
             </ul>
             <ul>
-              <li><i class="fa-brands fa-figma" id="icon"></i> Figma</li>
-              <li><i class="fa-brands fa-css3-alt" id="icon"></i> CSS3</li>
-              <li><i class="fa-brands fa-sass" id="icon"></i> SASS</li>
-              <li><i class="fa-brands fa-js" id="icon"></i> JavaScript</li>
-              <li><i class="fa-brands fa-react" id="icon"></i> ReactJs</li>
-              <li><i class="fa-brands fa-node-js" id="icon"></i> NodeJs</li>
-              <li><i class="fa-brands fa-mdb" id="icon"></i> MongoDb</li>
-              <li>
+              <li title="HTML5">
+                <i class="fa-brands fa-figma" id="icon"></i> Figma
+              </li>
+              <li title="CSS3">
+                <i class="fa-brands fa-css3-alt" id="icon"></i> CSS3
+              </li>
+              <li title="SASS">
+                <i class="fa-brands fa-sass" id="icon"></i> SASS
+              </li>
+              <li title="JavaScript">
+                <i class="fa-brands fa-js" id="icon"></i> JavaScript
+              </li>
+              <li title="ReactJs">
+                <i class="fa-brands fa-react" id="icon"></i> ReactJs
+              </li>
+              <li title="NodeJs">
+                <i class="fa-brands fa-node-js" id="icon"></i> NodeJs
+              </li>
+              <li title="MongoDb">
+                <i class="fa-brands fa-mdb" id="icon"></i> MongoDb
+              </li>
+              <li title="Firebase">
                 <i class="fa-solid fa-fire-flame-curved" id="icon"></i> Firebase
               </li>
             </ul>
@@ -239,20 +321,30 @@
       <div class="container">
         <div class="flex_title" style="margin: 0" data-aos="fade-down">
           <p><i class="fa-regular fa-user" id="icon"></i> Sobre mim</p>
-          <a class="back" href="#projetos" title="Volte para a sessão anterior">
+          <a
+            class="back tooltip-left"
+            href="#projetos"
+            data-tooltip="Volte para a seção Projetos"
+          >
             <i class="fa-solid fa-arrow-up" id="icon"></i>
           </a>
         </div>
 
         <div class="about_grid">
-          <p class="description">
+          <div class="description">
             Bora saber um pouco mais sobre mim.<br />Tire algumas das dúvidas
             comuns sobre qualquer pessoa.
-          </p>
+            <div class="italic_container">
+              <span class="italic_text">
+                <i class="fa-solid fa-circle-info" id="icon"></i>
+                Clique na pergunta e veja a resposta.</span
+              >
+            </div>
+          </div>
 
           <div class="faq_container">
             <aside class="faq_sidebar">
-              <h2>Navegue</h2>
+              <h2>Dúvidas</h2>
             </aside>
 
             <div class="faq_content">
@@ -284,9 +376,8 @@
                     contato com a programação foi no Discord, programando bots
                     com a livraria
                     <b>discord.js</b>. Cheguei a criar uma comunidade, ajudando
-                    outros programadores a desenvolver projetos úteis e,
-                    principalmente, se divertir. Afinal, a programação é sim uma
-                    diversão.
+                    outros programadores a Lives úteis e, principalmente, se
+                    divertir. Afinal, a programação é sim uma diversão.
                   </p>
                 </div>
               </details>
@@ -366,19 +457,34 @@
     <div class="section" id="feedback">
       <div class="flex_title" style="margin: 0" data-aos="fade-down">
         <p><i class="fa-regular fa-star" id="icon"></i> Depoimentos</p>
-        <a class="back" href="#" title="Volte para a sessão anterior">
+        <a
+          class="back tooltip-left"
+          href="#sobre"
+          data-tooltip="Volte para a seção Sobre Mim"
+        >
           <i class="fa-solid fa-arrow-up" id="icon"></i>
         </a>
       </div>
 
-      <p class="description">
-        Alguns dos depoimentos de quem já trabalhou comigo.<br />
-        Clique no comentário para ir até a fonte.
-      </p>
+      <div class="description">
+        Alguns dos depoimentos de quem já trabalhou comigo.
+
+        <div class="italic_container" style="margin: 5px 0 30px 0">
+          <span class="italic_text">
+            <i class="fa-solid fa-circle-info" id="icon"></i>
+            Pressione o comentário para ir até a fonte.</span
+          >
+          <span class="italic_text mobile">
+            <i class="fa-solid fa-circle-info" id="icon"></i>
+            Arraste os comentários para o lado e veja mais.</span
+          >
+        </div>
+      </div>
 
       <div class="feedback_wrapper">
         <a
           class="feedback_card_unique"
+          data-tooltip="Pressione o comentário para visitar a fonte"
           href="https://www.99freelas.com.br/project/criacao-de-apenas-uma-pagina-em-html-css-e-javascript-do-zero-290738"
           target="_blank"
         >
@@ -411,6 +517,7 @@
           class="feedback_card_unique"
           href="https://www.99freelas.com.br/project/site-para-studio-de-treinamento-fisico-318217"
           target="_blank"
+          data-tooltip="Pressione o comentário para visitar a fonte"
         >
           <div class="user_info">
             <div class="user_img">
@@ -440,6 +547,7 @@
           class="feedback_card_unique"
           href="https://www.99freelas.com.br/project/website-equipamentos-para-bitcoin-294112"
           target="_blank"
+          data-tooltip="Pressione o comentário para visitar a fonte"
         >
           <div class="user_info">
             <div class="user_img">
@@ -472,22 +580,37 @@
       <div class="footer_container">
         <div class="footer_text">
           <h1>Fim da linha!</h1>
-          <p>
-            Obrigado pela sua visita!<br/>Volte sempre que quiser.
-          </p>
+          <p>Obrigado pela sua visita!<br />Volte sempre que quiser.</p>
 
           <div class="social_links">
-              <a href="https://github.com/soufunck" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.instagram.com/jpfunck/" target="_blank" title="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
+            <a
+              class="tooltip-right"
+              href="https://github.com/soufunck"
+              target="_blank"
+              title="GitHub"
+              data-tooltip="Visite meu GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/jpfunck/"
+              target="_blank"
+              title="Instagram"
+              data-tooltip="Visite meu Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
           </div>
         </div>
 
-        <a class="back" href="#" title="Volte para o começo!">
+        <a
+          class="back tooltip-left"
+          href="#home"
+          data-tooltip="Volte para o começo"
+        >
           <i class="fa-solid fa-arrow-up" id="icon"></i>
         </a>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
