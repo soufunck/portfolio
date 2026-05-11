@@ -1,30 +1,87 @@
 /* PALETA */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 
+/* TEMA CLARO (Padrão - Cores novas) */
 :root {
+  --bg: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #f1f3f5;
+  --bg-card_hover: #e9ecef;
+  --text-main: #1a1a1a;
+  --text-muted: #6c757d;
+  --accent: #7d5fff;
+  --accent-hover: #6a4ee0;
+  --gray: #dee2e6;
+  --green: #10b981;
+  --space-gradient: linear-gradient(
+    135deg,
+    #f8f9fa 0%,
+    #e0e7ff 35%,
+    #f3e8ff 70%,
+    #f8f9fa 100%
+  );
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* TEMA ESCURO (Cores originais do seu site) */
+[data-theme="dark"] {
   --bg: #030303;
   --bg-secondary: #0e0e0e;
   --bg-card: #1a1a1a;
   --bg-card_hover: #202020;
-
+  --text-main: #ffffff;
   --text-muted: #b0b0b0;
-
   --accent: #7d5fff;
   --accent-hover: #7c5fff9f;
   --gray: #363636;
   --green: #10b981;
-
-  --space-gradient: linear-gradient(135deg,
-      #050505 0%,
-      #0a0b1e 35%,
-      #160a25 70%,
-      #050505 100%);
-
+  --space-gradient: linear-gradient(
+    135deg,
+    #050505 0%,
+    #0a0b1e 35%,
+    #160a25 70%,
+    #050505 100%
+  );
   --glass-border: rgba(255, 255, 255, 0.08);
-  --transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-  --bg-space: linear-gradient(300deg, #161616 0%, #0e0a0a 50%, #161616 100%);
-  --text-main: #ffffff;
+}
+
+/* Estilo do Botão Flutuante */
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+
+  background: var(--bg-card);
+  color: var(--accent);
+  border: 2px solid var(--glass-border);
+
+  padding: 15px 13px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+#theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+#theme-toggle i {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+
+#theme-toggle:active i {
+  transform: rotate(180deg);
 }
 
 /* GERAL */
@@ -34,12 +91,15 @@
   padding: 0;
   box-sizing: border-box;
 
-  scroll-behavior: smooth;
-
+  scroll-behavior: smooth !important;
   list-style: none;
   text-decoration: none;
 
   transition: 0.2s;
+}
+
+[id] {
+  scroll-margin-top: 50px;
 }
 
 ::-webkit-scrollbar,
@@ -197,7 +257,7 @@ h2 {
   height: 150px;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.514)),
-    url(https://raw.githubusercontent.com/soufunck/portfolio/refs/heads/main/imagens/coffee_bg.png);
+    url(/imagens/coffee_bg.png);
   background-size: 100%;
   object-fit: cover;
 
@@ -338,7 +398,7 @@ h2 {
   border-color: var(--accent);
 }
 
-/* EFEITO DEIXADO DE LADO, MAS VAI QUE EU UTILIZE
+/* EFEITO DEIXADO DE LADO, MAS VAI QUE EU USE UM DIA KKK
 .btn_disable {
   padding: 10px 20px;
   background: var(--bg-secondary);
@@ -364,7 +424,40 @@ h2 {
   line-height: 26px;
   color: var(--text-muted);
   max-width: 650px;
-  margin-bottom: 30px;
+
+  margin-bottom: 5px;
+}
+
+.description .italic_container {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+
+  width: max-content;
+}
+
+.description .italic_text {
+  font-size: 14px;
+  width: max-content;
+
+  padding: 5px 8px;
+  border-radius: 5px;
+
+  color: var(--accent);
+  background: #6b4ee02a;
+  cursor: default;
+}
+
+.description .italic_text #icon {
+  color: var(--accent);
+}
+
+.description .italic_text:last-child {
+  margin-top: 5px;
+}
+
+.description .italic_text.mobile {
+  display: none;
 }
 
 /* Projetos */
@@ -384,6 +477,8 @@ h2 {
 
 .projects_card {
   text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
 
   width: 100%;
   height: 400px;
@@ -393,8 +488,8 @@ h2 {
   border-radius: 5px;
 }
 
-.projects_card:hover {
-  border-color: var(--accent);
+.projects_card .scroll {
+  display: none;
 }
 
 .card_bg {
@@ -403,10 +498,11 @@ h2 {
 
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 0 0;
   transition: background-position 2s ease-in-out;
 }
 
-.projects_card:hover .card_bg {
+.card_bg.ativo {
   background-position: 0 100%;
 }
 
@@ -435,16 +531,7 @@ h2 {
   border-bottom: 2px solid var(--gray);
 
   background-color: var(--bg-secondary);
-  color: var(--gray);
-}
-
-.projects_card:hover .opacity_itens .description,
-.projects_card:focus .opacity_itens .description {
-  border-color: var(--accent);
-
-  background-color: transparent;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  color: var(--text-main);
 }
 
 .projects_card .btn {
@@ -454,18 +541,8 @@ h2 {
   font-size: 13px;
 
   border: 2px solid var(--glass-border);
-  color: var(--gray);
+  color: var(--text-main);
   background-color: transparent;
-}
-
-.projects_card:hover .btn {
-  background-color: transparent;
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.projects_card:hover .description {
-  color: var(--accent);
 }
 
 .projects_card .btn:hover {
@@ -509,16 +586,20 @@ h2 {
   padding: 0 0 40px 0;
 
   width: 100%;
-  -webkit-mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
-  mask-image: linear-gradient(to right,
-      transparent,
-      black 10%,
-      black 90%,
-      transparent);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
 }
 
 .skills_slide {
@@ -858,6 +939,10 @@ footer {
     display: flex;
     justify-content: center;
   }
+
+  .hero_info {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -909,18 +994,233 @@ footer {
   }
 }
 
+@media (max-width: 980px) {
+  .projects_container,
+  .feedback_wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .projects_card,
+  .feedback_card_unique {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    height: 350px;
+  }
+}
+
+/* Verificação de tela mínima pra alguns efeitos né papai */
+@media (min-width: 769px) {
+  [data-tooltip] {
+    position: relative;
+    cursor: pointer;
+  }
+
+  [data-tooltip]:hover {
+    z-index: 100;
+  }
+
+  [data-tooltip]:not([class*="tooltip-"])::before {
+    content: attr(data-tooltip);
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background-color: var(--accent);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  [data-tooltip]:not([class*="tooltip-"])::after {
+    content: "";
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: var(--accent) transparent transparent transparent;
+  }
+
+  /* CONFIG GERAL DOS TOOLTIP */
+  [data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+
+    background-color: var(--accent);
+    color: var(--text-main);
+
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    white-space: nowrap;
+    border-radius: 5px;
+    text-transform: initial;
+
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    z-index: 9999;
+  }
+
+  /* Setinha */
+  [data-tooltip]::after {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: var(--accent) transparent transparent transparent;
+
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    z-index: 9999;
+  }
+
+  [data-tooltip]:hover::before,
+  [data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Outras posições do tooltip */
+  .tooltip-bottom[data-tooltip]::before,
+  .tooltip-bottom[data-tooltip]::after {
+    bottom: auto;
+    top: calc(100% + 10px);
+  }
+
+  .tooltip-bottom[data-tooltip]::after {
+    top: calc(100% + 4px);
+    border-width: 0 6px 6px 6px; /* Inverte a setinha para cima */
+    border-color: transparent transparent var(--accent) transparent;
+  }
+
+  .tooltip-right[data-tooltip]::before {
+    top: 50%;
+    left: calc(100% + 10px); /* Joga para a direita do elemento */
+    bottom: auto;
+    transform: translateY(-50%) translateX(-5px);
+  }
+
+  .tooltip-right[data-tooltip]::after {
+    top: 50%;
+    left: calc(100% + 4px);
+    bottom: auto;
+    transform: translateY(-50%);
+    /* Inverte a setinha para a esquerda */
+    border-width: 6px 6px 6px 0;
+    border-color: transparent var(--accent) transparent transparent;
+  }
+
+  .tooltip-right[data-tooltip]:hover::before {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  .tooltip-left[data-tooltip]::before {
+    top: 50%;
+    right: calc(100% + 10px);
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%) translateX(5px);
+  }
+
+  .tooltip-left[data-tooltip]::after {
+    top: 50%;
+    right: calc(100% + 4px);
+    left: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    border-width: 6px 0 6px 6px;
+    border-color: transparent transparent transparent var(--accent);
+  }
+
+  .tooltip-left[data-tooltip]:hover::before {
+    transform: translateY(-50%) translateX(0);
+  }
+
+  /* Ajustar distância personalizada */
+  .tooltip-longe[data-tooltip]::before {
+    bottom: 150%;
+  }
+
+  .projects_card:hover {
+    border-color: var(--accent);
+  }
+
+  .projects_card:hover .card_bg {
+    background-position: 0 100%;
+  }
+
+  .projects_card:hover .btn {
+    background-color: transparent;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .projects_card:hover .description {
+    color: var(--accent);
+  }
+
+  .projects_card:hover .opacity_itens .description,
+  .projects_card:focus .opacity_itens .description {
+    border-color: var(--accent);
+
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
 @media (max-width: 768px) {
-  .about_grid {
-    grid-template-columns: 1fr;
+  .description .italic_text.mobile {
+    display: block;
+  }
+  .description .italic_text.desktop {
+    display: none;
   }
 
   .faq_container {
+    display: flex;
     flex-direction: column;
-    gap: 40px;
+
+    padding: 0;
+    width: 100%;
   }
 
   .faq_sidebar {
     position: static;
+    width: 100%;
+    margin: 50px 0 20px 0;
+  }
+
+  .faq_content {
+    width: 100%;
+  }
+
+  .about_grid {
+    display: block;
+    width: 100%;
+  }
+
+  details {
+    width: 100%;
   }
 
   .projects_card .opacity_itens .description {
@@ -930,9 +1230,59 @@ footer {
   .projects_card .opacity_itens .description .btn {
     padding: 5px 10px;
   }
+
+  .projects_card .scroll {
+    display: block;
+    border: none;
+
+    width: 100%;
+    margin-top: 250px;
+    padding: 10px 0;
+    color: var(--accent);
+
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    border-top: 2px solid var(--glass-border);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .feedback_card_unique:hover {
+    transform: none;
+  }
+
+  .projects_container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .projects_container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 @media (max-width: 534px) {
+  #theme-toggle {
+    top: 50%;
+    right: 5px;
+  }
+
+  .description .italic_container {
+    width: max-content;
+  }
+
+  .description .italic_text {
+    font-size: 12px;
+    width: max-content;
+  }
+
+  .profile_card_container {
+    justify-content: left;
+  }
+
   .profile_card {
     width: 100%;
   }
@@ -981,7 +1331,6 @@ footer {
 }
 
 @keyframes wave-animation {
-
   0%,
   60%,
   100% {
@@ -1039,8 +1388,6 @@ footer {
   }
 
   to {
-    transform: translate3d(-50%,
-        0,
-        0);
+    transform: translate3d(-50%, 0, 0);
   }
 }
